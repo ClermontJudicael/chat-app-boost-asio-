@@ -1,9 +1,6 @@
 #include "server/TCPServer.hpp"
-#include <boost/asio/io_context.hpp>
-#include <exception>
-#include <iostream>
 
-int main() {
+int main(int argc, char* argv[]) {
     try {
         boost::asio::io_context io_context;
         tcp_server server(io_context, PORT);
