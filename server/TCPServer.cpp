@@ -20,7 +20,7 @@ void tcp_server::handle_accept(std::shared_ptr<tcp_session> new_session,
 }
 
 void tcp_server::start_accept()  {
-    boost::shared_ptr<tcp_session> new_session(
+    std::shared_ptr<tcp_session> new_session(
         new tcp_session(io_context_,
                         active_sessions_,
                         std::bind(&tcp_server::handle_session_disconnect, this, std::placeholders::_1))
